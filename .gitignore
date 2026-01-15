@@ -76,11 +76,13 @@ crashlytics-build.properties
 # ETC
 *.stackdump
 
-# macOS
-.DS_Store
+# Editor temporary files (Vim, etc.)
 *.swp
 *.swo
 *~
+
+# macOS
+.DS_Store
 .Spotlight-V100
 .Trashes
 ._*
@@ -90,13 +92,11 @@ Thumbs.db
 Thumbs.db.meta
 ehthumbs.db
 ehthumbs_vista.db
-*.stackdump
 [Dd]esktop.ini
 $RECYCLE.BIN/
 *.lnk
 
 # Linux
-*~
 .directory
 .Trash-*
 
