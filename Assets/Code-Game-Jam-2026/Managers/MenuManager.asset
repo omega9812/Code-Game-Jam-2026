@@ -1345,9 +1345,9 @@ MonoBehaviour:
     height: 38.85
   relativePosition: {x: 0, y: 0}
   numSlots: 1
-  uiButton: {fileID: 0}
+  uiButton: {fileID: 5083274995986945713, guid: 6b8573c076fbfde4a8e3048bd4200ce3, type: 3}
   uiPointerState: 0
-  _label: Continue
+  _label: Continuer
   hotspotLabel: 
   hotspotLabelID: -1
   anchor: 3
@@ -3880,9 +3880,9 @@ MonoBehaviour:
     height: 38.85
   relativePosition: {x: 0, y: 0}
   numSlots: 1
-  uiButton: {fileID: 0}
+  uiButton: {fileID: 5083274995987091999, guid: 6b8573c076fbfde4a8e3048bd4200ce3, type: 3}
   uiPointerState: 0
-  _label: Load
+  _label: Charger
   hotspotLabel: 
   hotspotLabelID: -1
   anchor: 3
@@ -6677,9 +6677,9 @@ MonoBehaviour:
     height: 38.85
   relativePosition: {x: 0, y: 0}
   numSlots: 1
-  uiButton: {fileID: 0}
+  uiButton: {fileID: 5083274995986945723, guid: 6b8573c076fbfde4a8e3048bd4200ce3, type: 3}
   uiPointerState: 0
-  _label: New game
+  _label: Laisse moi jouer!!!
   hotspotLabel: 
   hotspotLabelID: -1
   anchor: 3
@@ -7886,9 +7886,9 @@ MonoBehaviour:
     height: 38.85
   relativePosition: {x: 0, y: 0}
   numSlots: 1
-  uiButton: {fileID: 0}
+  uiButton: {fileID: 5083274995986945703, guid: 6b8573c076fbfde4a8e3048bd4200ce3, type: 3}
   uiPointerState: 0
-  _label: Quit
+  _label: Ah comme ca tu veux partir?
   hotspotLabel: 
   hotspotLabelID: -1
   anchor: 3
@@ -8430,7 +8430,7 @@ MonoBehaviour:
     height: 38.85
   relativePosition: {x: 0, y: 0}
   numSlots: 1
-  uiButton: {fileID: 0}
+  uiButton: {fileID: 5083274995986945709, guid: 6b8573c076fbfde4a8e3048bd4200ce3, type: 3}
   uiPointerState: 0
   _label: Options
   hotspotLabel: 
