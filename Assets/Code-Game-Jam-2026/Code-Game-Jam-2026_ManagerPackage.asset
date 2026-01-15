@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4a24d0e4a28423fb3249b923d7e418, type: 3}
+  m_Name: Code-Game-Jam-2026_ManagerPackage
+  m_EditorClassIdentifier: AC::AC.ManagerPackage
+  actionsManager: {fileID: 11400000, guid: baa15bc404e271d42b920c1d536d5b20, type: 2}
+  sceneManager: {fileID: 11400000, guid: 5bf0d97572251574f938ca4bbfbd4cdc, type: 2}
+  settingsManager: {fileID: 11400000, guid: 81195e525feac9c4293b507c8ddefda8, type: 2}
+  inventoryManager: {fileID: 11400000, guid: d7adec8dbde275b4fa992576d85dac40, type: 2}
+  variablesManager: {fileID: 11400000, guid: 11f8f9814766325468f598550efe0dae, type: 2}
+  speechManager: {fileID: 11400000, guid: 3ebb5e4b972008e4cac2094d6c950e0c, type: 2}
+  cursorManager: {fileID: 11400000, guid: 4dff83b40983e90459706bf15f5b0d57, type: 2}
+  menuManager: {fileID: 11400000, guid: 5468aa38dbad6a247876daea7414e773, type: 2}
