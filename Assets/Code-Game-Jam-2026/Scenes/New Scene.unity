@@ -1048,7 +1048,7 @@ Transform:
   m_GameObject: {fileID: 570693373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.112, y: -2.079, z: -0.47}
+  m_LocalPosition: {x: 5.19, y: -1.95, z: -0.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1088,7 +1088,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.6767135}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1098,7 +1098,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.98, y: 1.93}
+  m_Size: {x: 1.98, y: 0.5765728}
   m_EdgeRadius: 0
 --- !u!50 &570693379
 Rigidbody2D:
@@ -1126,7 +1126,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!114 &653019817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   hotspotName: 
   lineID: -1
   highlight: {fileID: 0}
-  walkToMarker: {fileID: 0}
+  walkToMarker: {fileID: 4322230810778135678}
   centrePoint: {fileID: 0}
   centrePointOverrides: 0
   provideUseInteraction: 1
@@ -2028,7 +2028,7 @@ MonoBehaviour:
     invID: 0
     iconID: 1
     selectItemMode: 0
-    playerAction: 2
+    playerAction: 3
     doubleClickDoesNotSnapPlayerToMarker: 0
     setProximity: 0
     proximity: 1
@@ -2520,7 +2520,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 1
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -4419,7 +4419,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 1
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -4843,6 +4843,7 @@ SceneRoots:
   - {fileID: 1203408620}
   - {fileID: 730440122}
   - {fileID: 1761306724920632182}
+  - {fileID: 570693377}
   - {fileID: 944488963}
   - {fileID: 3672146501558300815}
   - {fileID: 1129146734}
@@ -4852,4 +4853,3 @@ SceneRoots:
   - {fileID: 4322230810767132094}
   - {fileID: 505668075353883297}
   - {fileID: 1374181854300347694}
-  - {fileID: 570693377}
