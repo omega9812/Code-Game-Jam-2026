@@ -111,7 +111,7 @@ MonoBehaviour:
   giveInvWithUnhandled: 0
   giveInvWithIconID: 0
   autoDisableUnhandledHotspots: 1
-  autoToggleGiveMode: 1
+  autoToggleGiveMode: 0
   clickPrefab: {fileID: 0}
   showClickPrefabWithStraightToCursorHeld: 0
   clickMarkerPosition: 0
