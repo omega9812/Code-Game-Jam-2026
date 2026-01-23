@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53311cd2a4c0d432f9d69d13b8cbad48, type: 3}
   m_Name: ACEditorPrefs
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: AC::AC.ACEditorPrefs
   hierarchyIconOffset: 0
   hotspotGizmoColor: {r: 1, g: 1, b: 0, a: 0.6}
   triggerGizmoColor: {r: 1, g: 0.3, b: 0, a: 0.8}
