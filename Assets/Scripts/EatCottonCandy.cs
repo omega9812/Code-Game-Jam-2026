@@ -1,30 +1,41 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class EatCottonCandy : MonoBehaviour
-{
+{   
     [Header("Sprites (ordre : complet -> ... -> dernier)")]
     public Sprite[] stages;
 
     [Header("Nombre de clics pour passer au sprite suivant")]
     public int clicksPerStage = 5;
 
-    [Header("Dernier sprite : clics supplÈmentaires avant fin")]
+    [Header("Dernier sprite : clics suppl√©mentaires avant fin")]
     public int finishClicksNeeded = 5;
 
     [Header("Effet de clic (recul)")]
-    public float clickScale = 0.9f;        // 0.9 = petit recul
-    public float clickAnimSpeed = 25f;     // plus grand = plus rapide
-    public float clickHoldTime = 0.05f;    // temps "reculÈ"
+    public float clickScale = 0.9f;
+    public float clickAnimSpeed = 25f;
+    public float clickHoldTime = 0.05f;
 
     [Header("Fin du mini-jeu")]
-    public ParticleSystem smokePS;         // glisse ton SmokeEffect (Particle System)
+    public ParticleSystem smokePS;
     public float disappearDuration = 0.25f;
+    public float waitAfterSmoke = 0.2f;
     public string menuSceneName = "MenuScene";
+
+    [Header("Sons")]
+    public AudioClip crunchClip;   // son √† chaque clic
+    public AudioClip pouffClip;    // son √† la fin (fum√©e)
+    [Range(0f, 1f)] public float crunchVolume = 0.8f;
+    [Range(0f, 1f)] public float pouffVolume = 1f;
+
+    [Header("Timing son")]
+    public float crunchBeforeSpriteDelay = 0.04f; // 40 ms
 
     private SpriteRenderer sr;
     private Camera cam;
+    private AudioSource audioSrc;
 
     private int clickCount = 0;
     private int stageIndex = 0;
@@ -38,19 +49,32 @@ public class EatCottonCandy : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         cam = Camera.main;
+        audioSrc = GetComponent<AudioSource>();
+
         originalScale = transform.localScale;
 
         clickCount = 0;
         stageIndex = 0;
         finishClicks = 0;
 
-        // Met le premier sprite seulement si correctement rempli
+        if (sr == null)
+        {
+            Debug.LogError("Il manque un SpriteRenderer sur l'objet.");
+            enabled = false;
+            return;
+        }
+
+        // Met le premier sprite si stages est rempli
         if (stages != null && stages.Length > 0 && stages[0] != null)
             sr.sprite = stages[0];
         else
-            Debug.LogWarning("Stages non configurÈ ou stages[0] vide : garde le sprite actuel.");
+            Debug.LogWarning("Stages non configur√© ou stages[0] vide : garde le sprite actuel.");
 
-        // Ne doit pas jouer au dÈmarrage
+        // AudioSource recommand√© mais pas obligatoire
+        if (audioSrc != null)
+            audioSrc.playOnAwake = false;
+
+        // Ne doit pas jouer au d√©marrage
         if (smokePS != null)
             smokePS.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
@@ -77,15 +101,15 @@ public class EatCottonCandy : MonoBehaviour
     {
         if (stages == null || stages.Length == 0) return;
 
-        // Lance l'anim de clic et bloque les clics pendant l'anim
-        StartCoroutine(ClickEffect());
-
         bool isLastStage = stageIndex >= stages.Length - 1;
 
-        // --- Cas : on est dÈj‡ sur le dernier sprite -> il faut encore cliquer finishClicksNeeded fois ---
+        // ---- Dernier sprite : clics suppl√©mentaires ----
         if (isLastStage)
         {
             finishClicks++;
+
+            // Son crunch aussi sur les bouch√©es finales (optionnel)
+            StartCoroutine(ClickEffect(true));
 
             if (finishClicks >= finishClicksNeeded)
             {
@@ -94,29 +118,43 @@ public class EatCottonCandy : MonoBehaviour
             return;
         }
 
-        // --- Cas normal : on avance de sprite tous les clicksPerStage clics ---
+        // ---- Progression normale ----
         clickCount++;
 
+        // Changement d'image = bouch√©e valid√©e
         if (clickCount % clicksPerStage == 0)
         {
             stageIndex++;
 
+            StartCoroutine(ClickEffect(true)); // crunch AVANT le croc
+
             if (stageIndex < stages.Length && stages[stageIndex] != null)
                 sr.sprite = stages[stageIndex];
-
-            // IMPORTANT : on ne dÈclenche PAS la fin ici,
-            // on attend les clics supplÈmentaires sur le dernier sprite.
+        }
+        else
+        {
+            // Clic non compt√© ‚Üí pas de son
+            StartCoroutine(ClickEffect(false));
         }
     }
 
-    IEnumerator ClickEffect()
+
+
+
+    IEnumerator ClickEffect(bool playCrunch)
     {
         canClick = false;
 
-        // Recul instantanÈ
+        // --- Son crunch AVANT le croc visuel ---
+        if (playCrunch && crunchClip != null)
+        {
+            yield return new WaitForSeconds(crunchBeforeSpriteDelay);
+            PlayOneShot(crunchClip, crunchVolume);
+        }
+
+        // --- Croc visuel (recul) ---
         transform.localScale = originalScale * clickScale;
 
-        // mini dÈlai
         yield return new WaitForSeconds(clickHoldTime);
 
         // Retour rapide
@@ -135,31 +173,30 @@ public class EatCottonCandy : MonoBehaviour
         canClick = true;
     }
 
+
+
     IEnumerator FinishCandy()
     {
         if (isFinishing) yield break;
         isFinishing = true;
         canClick = false;
 
-        float smokeTime = 0.5f;
+        // Son "pouff" √† la fin
+        PlayOneShot(pouffClip, pouffVolume);
 
-        // FumÈe
+        // Fum√©e
         if (smokePS != null)
         {
             smokePS.transform.position = transform.position;
             smokePS.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             smokePS.Play();
-
-            // DurÈe totale approximative de l'effet
-            var main = smokePS.main;
-            smokeTime = main.duration + main.startLifetime.constantMax;
         }
         else
         {
-            Debug.LogWarning("SmokePS non assignÈ dans l'Inspector !");
+            Debug.LogWarning("SmokePS non assign√© dans l'Inspector !");
         }
 
-        // Disparition (scale -> 0)
+        // Disparition
         Vector3 start = transform.localScale;
         float t = 0f;
 
@@ -172,10 +209,23 @@ public class EatCottonCandy : MonoBehaviour
 
         transform.localScale = Vector3.zero;
 
-        // On laisse le temps ‡ la fumÈe d'Ítre visible
-        yield return new WaitForSeconds(1f);
+        // Petit d√©lai (r√©glable) pour laisser voir fum√©e/son
+        yield return new WaitForSeconds(waitAfterSmoke);
 
-        // Retour au menu
         SceneManager.LoadScene(menuSceneName);
+    }
+
+    void PlayOneShot(AudioClip clip, float volume)
+    {
+        if (clip == null) return;
+
+        // Si pas d'AudioSource sur l'objet, Unity peut quand m√™me jouer un son 2D
+        if (audioSrc == null)
+        {
+            AudioSource.PlayClipAtPoint(clip, transform.position, volume);
+            return;
+        }
+
+        audioSrc.PlayOneShot(clip, volume);
     }
 }
