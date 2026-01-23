@@ -1,218 +1,356 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
+using TMPro;
+
 
 public class HammerStrengthGame : MonoBehaviour
 {
-    [Header("Références")]
-    public SpriteRenderer hammerSR;      // SpriteRenderer du marteau
-    public Transform hammerTransform;    // Transform du marteau (même objet que hammerSR)
+    [Header("RÃ©fÃ©rences")]
+    public SpriteRenderer hammerSR;
+    public Transform hammerTransform;
     public Transform weight;
     public Transform weightMin;
     public Transform weightMax;
 
-    [Header("UI (optionnel)")]
-    public Slider chargeBar;            // barre de charge
-    public Text clickCounterText;       // Text (Legacy) pour afficher le nb de clics
+    [Header("UI")]
+    public Slider chargeBar;
+    public TextMeshProUGUI timerText;
 
-    [Header("Sprites marteau (2 étapes)")]
-    public Sprite hammerUp;             // normal
-    public Sprite hammerHit;            // impact
+    [Header("Sprites poÃªle")]
+    public Sprite hammerUp;
+    public Sprite hammerHit;
 
     [Header("Charge")]
-    public float chargeDuration = 2.0f;     // temps pour spam clic
-    public float chargePerClick = 0.08f;    // gain par clic
-    public float chargeDecayPerSec = 0.0f;  // 0 = pas de baisse
-    public float maxCharge = 1.0f;
+    public float chargeDuration = 2f;
+    public float chargePerClick = 0.045f;
+    public float maxCharge = 1f;
 
     [Header("Poids")]
     public float weightMoveSpeed = 10f;
 
-    [Header("Impact / décalage marteau")]
-    public float hammerHitTime = 0.12f;     // durée sprite HIT
-    public float hammerImpactX = 0f;        // X=0 au moment du coup
-    public float hammerMoveToImpactTime = 0.05f;  // vitesse du déplacement vers X=0
-    public float hammerReturnTime = 0.08f;        // retour position initiale
+    [Header("Animation poÃªle")]
+    public float growScale = 1.5f;
+    public float shrinkScale = 0.7f;
+    public float scaleAnimSpeed = 8f;
+
+    [Header("DÃ©placement poÃªle")]
+    public float hammerBackX = -0.6f;
+    public float hammerImpactX = 0f; // IMPACT TOUJOURS Ã€ X=0
+
+    [Header("Shake impact")]
+    public float shakeDuration = 0.12f;
+    public float shakeStrength = 0.08f;
+
+    [Header("Sons")]
+    public AudioClip clickClip;
+    public AudioClip hitClip;
+    public AudioClip dingClip;
+    public AudioClip victoryMusic;
+
+    public float clickVolume = 0.6f;
+    public float hitVolume = 1f;
+    public float dingVolume = 1f;
+    public float victoryVolume = 1f;
+
+    [Header("Victoire")]
+    public float victoryThreshold = 0.9f;
+    public float delayAfterDing = 1.5f;
+    public string menuSceneName = "MenuScene";
+
+    [Header("Aide adaptative")]
+    public float baseChargePerClick = 0.045f;
+    public float chargeAfterTwoFails = 0.05f;
+    public float extraChargePerFail = 0.01f;
+
+    private int failCount = 0;
+
+    private AudioSource audioSrc;
+    private Vector3 hammerStartPos;
+    private Vector3 hammerStartScale;
 
     private float charge = 0f;
     private bool isCharging = false;
-    private bool isBusy = false;
-
-    private int clickCount = 0;
-    private Vector3 hammerStartPos;
+    private bool roundRunning = false;
 
     void Start()
     {
-        if (hammerTransform == null && hammerSR != null) hammerTransform = hammerSR.transform;
-        if (hammerTransform != null) hammerStartPos = hammerTransform.position;
+        audioSrc = GetComponent<AudioSource>();
+
+        if (hammerTransform == null)
+            hammerTransform = hammerSR.transform;
+
+        hammerStartPos = hammerTransform.position;
+        hammerStartScale = hammerTransform.localScale;
+
+        chargePerClick = baseChargePerClick;
 
         ResetRound();
     }
 
     void Update()
     {
-        if (isBusy) return;
-
-        // Test : Espace lance une manche
-        if (!isCharging && Input.GetKeyDown(KeyCode.Space))
+        if (!roundRunning && Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(ChargeThenHit());
+            roundRunning = true;
+            isCharging = true;
+
+            AddCharge();
+            StartCoroutine(ChargeTimer());
+            return;
         }
 
-        // Détection clic : uniquement pendant la charge
         if (isCharging && Input.GetMouseButtonDown(0))
         {
-            clickCount++;
-            UpdateClickCounter();
-
-            charge = Mathf.Clamp(charge + chargePerClick, 0f, maxCharge);
-            UpdateUI();
-        }
-
-        // Option : la charge baisse si on arrête
-        if (isCharging && chargeDecayPerSec > 0f)
-        {
-            charge = Mathf.Clamp(charge - chargeDecayPerSec * Time.deltaTime, 0f, maxCharge);
-            UpdateUI();
+            AddCharge();
         }
     }
 
-    // Pour lancer via un bouton UI
-    public void StartRound()
+    void AddCharge()
     {
-        if (!isCharging && !isBusy)
-            StartCoroutine(ChargeThenHit());
-    }
-
-    IEnumerator ChargeThenHit()
-    {
-        isBusy = true;
-        isCharging = true;
-
-        charge = 0f;
-        clickCount = 0;
+        Play(clickClip, clickVolume);
+        charge = Mathf.Clamp(charge + chargePerClick, 0f, maxCharge);
         UpdateUI();
-        UpdateClickCounter();
+    }
 
-        // Phase de charge (spam clic)
-        float t = 0f;
-        while (t < chargeDuration)
+    IEnumerator ChargeTimer()
+    {
+        float remaining = chargeDuration;
+
+        while (remaining > 0f)
         {
-            t += Time.deltaTime;
+            remaining -= Time.deltaTime;
+
+            if (timerText != null)
+                timerText.text = remaining.ToString("0.0") + "s";
+
             yield return null;
         }
 
+        if (timerText != null)
+            timerText.text = "0.0s";
+
         isCharging = false;
 
-        float normalized = Mathf.InverseLerp(0f, maxCharge, charge);
-
-        // Impact (sprite hit + déplacement X=0 + montée du poids)
+        float normalized = charge / maxCharge;
         yield return HammerImpact(normalized);
-
-        // Petite pause puis reset
-        yield return new WaitForSeconds(0.8f);
-
-        ResetRound();
-        isBusy = false;
     }
+
 
     IEnumerator HammerImpact(float normalized)
     {
-        if (hammerSR == null || hammerTransform == null) yield break;
+        // RECUL
+        Vector3 backPos = new Vector3(
+            hammerStartPos.x + hammerBackX,
+            hammerStartPos.y,
+            hammerStartPos.z
+        );
+        yield return MoveTransform(backPos);
 
-        // Déplace le marteau vers X = 0 (impact)
-        Vector3 impactPos = new Vector3(hammerImpactX, hammerTransform.position.y, hammerTransform.position.z);
-        yield return MoveTransform(hammerTransform, impactPos, hammerMoveToImpactTime);
+        // GROSSISSEMENT
+        yield return ScaleHammer(hammerStartScale * growScale);
 
-        // Sprite HIT
-        if (hammerHit != null) hammerSR.sprite = hammerHit;
+        // ATTAQUE vers X=0 + rÃ©trÃ©cit
+        Vector3 impactPos = new Vector3(
+            hammerImpactX,
+            hammerTransform.position.y,
+            hammerTransform.position.z
+        );
+        yield return AttackMoveAndScale(impactPos);
 
-        // Le poids monte au moment de l'impact
-        yield return MoveWeightToNormalized(normalized);
+        // LOCK X=0
+        hammerTransform.position = new Vector3(
+            hammerImpactX,
+            hammerTransform.position.y,
+            hammerTransform.position.z
+        );
 
-        // Maintient un peu le sprite HIT
-        yield return new WaitForSeconds(hammerHitTime);
+        // IMPACT
+        hammerSR.sprite = hammerHit;
+        Play(hitClip, hitVolume);
+        yield return ShakeHammer();
 
-        // Retour sprite normal
-        if (hammerUp != null) hammerSR.sprite = hammerUp;
+        // POIDS MONTE
+        yield return MoveWeight(normalized);
 
-        // Retour à la position de départ du marteau
-        yield return MoveTransform(hammerTransform, hammerStartPos, hammerReturnTime);
+        // RETOUR NORMAL
+        hammerSR.sprite = hammerUp;
+        yield return MoveTransform(hammerStartPos);
+        yield return ScaleHammer(hammerStartScale);
+
+        // VICTOIRE ?
+        yield return HandleVictory(normalized);
     }
 
-    IEnumerator MoveWeightToNormalized(float normalized)
+    IEnumerator HandleVictory(float normalized)
     {
-        if (weight == null || weightMin == null || weightMax == null) yield break;
+        if (normalized >= 1f)
+        {
+            OnWin();
 
-        Vector3 target = Vector3.Lerp(weightMin.position, weightMax.position, Mathf.Clamp01(normalized));
+            Play(dingClip, dingVolume);
+            yield return new WaitForSeconds(delayAfterDing);
+
+            Play(victoryMusic, victoryVolume);
+            yield return new WaitForSeconds(1.5f);
+
+            SceneManager.LoadScene(menuSceneName);
+            yield break;
+        }
+
+        if (normalized >= victoryThreshold)
+        {
+            OnWin();
+
+            Play(victoryMusic, victoryVolume);
+            yield return new WaitForSeconds(1.5f);
+
+            SceneManager.LoadScene(menuSceneName);
+            yield break;
+        }
+
+        OnFail();
+        ResetRound();
+    }
+
+    void OnFail()
+    {
+        failCount++;
+
+        if (failCount == 2)
+            chargePerClick = chargeAfterTwoFails;
+        else if (failCount > 2)
+            chargePerClick += extraChargePerFail;
+    }
+
+    void OnWin()
+    {
+        failCount = 0;
+        chargePerClick = baseChargePerClick;
+    }
+
+    IEnumerator MoveWeight(float normalized)
+    {
+        Vector3 target = Vector3.Lerp(
+            weightMin.position,
+            weightMax.position,
+            Mathf.Clamp01(normalized)
+        );
 
         while (Vector3.Distance(weight.position, target) > 0.01f)
         {
-            weight.position = Vector3.Lerp(weight.position, target, Time.deltaTime * weightMoveSpeed);
+            weight.position = Vector3.Lerp(
+                weight.position,
+                target,
+                Time.deltaTime * weightMoveSpeed
+            );
             yield return null;
         }
 
         weight.position = target;
     }
 
-    IEnumerator MoveTransform(Transform tr, Vector3 target, float duration)
+    IEnumerator MoveTransform(Vector3 target)
     {
-        if (tr == null) yield break;
-
-        if (duration <= 0.001f)
-        {
-            tr.position = target;
-            yield break;
-        }
-
-        Vector3 start = tr.position;
+        Vector3 start = hammerTransform.position;
         float t = 0f;
 
         while (t < 1f)
         {
-            t += Time.deltaTime / duration;
-            tr.position = Vector3.Lerp(start, target, t);
+            t += Time.deltaTime * scaleAnimSpeed;
+            hammerTransform.position = Vector3.Lerp(start, target, t);
             yield return null;
         }
 
-        tr.position = target;
+        hammerTransform.position = target;
+    }
+
+    IEnumerator ScaleHammer(Vector3 targetScale)
+    {
+        Vector3 start = hammerTransform.localScale;
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime * scaleAnimSpeed;
+            hammerTransform.localScale = Vector3.Lerp(start, targetScale, t);
+            yield return null;
+        }
+
+        hammerTransform.localScale = targetScale;
+    }
+
+    IEnumerator AttackMoveAndScale(Vector3 targetPos)
+    {
+        Vector3 startPos = hammerTransform.position;
+        Vector3 startScale = hammerTransform.localScale;
+        Vector3 targetScale = hammerStartScale * shrinkScale;
+
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime * scaleAnimSpeed;
+            hammerTransform.position = Vector3.Lerp(startPos, targetPos, t);
+            hammerTransform.localScale = Vector3.Lerp(startScale, targetScale, t);
+            yield return null;
+        }
+
+        hammerTransform.position = targetPos;
+        hammerTransform.localScale = targetScale;
+    }
+
+    IEnumerator ShakeHammer()
+    {
+        Vector3 originalPos = hammerTransform.position;
+        float elapsed = 0f;
+
+        while (elapsed < shakeDuration)
+        {
+            elapsed += Time.deltaTime;
+
+            float offsetX = Random.Range(-shakeStrength, shakeStrength);
+            float offsetY = Random.Range(-shakeStrength, shakeStrength);
+
+            hammerTransform.position = new Vector3(
+                originalPos.x + offsetX,
+                originalPos.y + offsetY,
+                originalPos.z
+            );
+
+            yield return null;
+        }
+
+        hammerTransform.position = originalPos;
     }
 
     void ResetRound()
     {
         charge = 0f;
+        roundRunning = false;
         isCharging = false;
+
+        hammerSR.sprite = hammerUp;
+        hammerTransform.position = hammerStartPos;
+        hammerTransform.localScale = hammerStartScale;
+
+        weight.position = weightMin.position;
         UpdateUI();
+        if (timerText != null)
+            timerText.text = chargeDuration.ToString("0.0") + "s";
 
-        if (hammerSR != null && hammerUp != null)
-            hammerSR.sprite = hammerUp;
-
-        if (hammerTransform != null)
-        {
-            // met à jour la position "départ" si tu as déplacé le marteau dans l’éditeur
-            hammerStartPos = hammerTransform.position;
-        }
-
-        // Poids en bas
-        if (weight != null && weightMin != null)
-            weight.position = weightMin.position;
-
-        // Compteur clics à 0
-        clickCount = 0;
-        UpdateClickCounter();
     }
 
     void UpdateUI()
     {
-        if (chargeBar == null) return;
-        chargeBar.minValue = 0f;
-        chargeBar.maxValue = maxCharge;
-        chargeBar.value = charge;
+        if (chargeBar != null)
+            chargeBar.value = charge;
     }
 
-    void UpdateClickCounter()
+    void Play(AudioClip clip, float volume)
     {
-        if (clickCounterText == null) return;
-        clickCounterText.text = "Clics : " + clickCount;
+        if (clip != null)
+            audioSrc.PlayOneShot(clip, volume);
     }
 }
