@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 943a424c66160694f997a0fa6eed5c71
+guid: 61138191226c36d48b2909cd033d99a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9033045026620458836
-    second: barbe_1_0
+      213: 9207694257067220791
+    second: barbe_5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: barbe_1_0
+      name: barbe_5_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 28
-        height: 31
+        width: 16
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca8bd2c486d24a280800000000000000
-      internalID: -9033045026620458836
+      spriteID: 73f55e0742d48cf70800000000000000
+      internalID: 9207694257067220791
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      barbe_1_0: -9033045026620458836
+      barbe_5_0: 9207694257067220791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

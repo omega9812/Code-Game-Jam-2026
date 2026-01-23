@@ -5,7 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: 7101625497c4f3b4f81ad1cae86c7219
+  - enabled: 0
+    path: Assets/Scenes/MiniGames.unity
+    guid: 0907f55d38c27ff46b3cd0a039e38747
+  - enabled: 1
+    path: Assets/Scenes/JeuBarbeAPapa.unity
+    guid: 25262d96d7759534eb1a4def1041c961
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

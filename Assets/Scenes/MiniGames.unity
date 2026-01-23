@@ -288,11 +288,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39dfc652a90e4aa4ba09afdb22e2602e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EatCottonCandy
+  clickScale: 0.9
+  animationSpeed: 10
   stages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3633205188601264855, guid: bb7e3933fb9285445b9958832c374aef, type: 3}
+  - {fileID: -9033045026620458836, guid: 943a424c66160694f997a0fa6eed5c71, type: 3}
+  - {fileID: 5210010938293149982, guid: be2b99d035a49294f95efc2938c12969, type: 3}
+  - {fileID: -622183128880045865, guid: d5051fb281125ef459fb861f59f38788, type: 3}
   clicksPerStage: 5
 --- !u!61 &461026300
 BoxCollider2D:

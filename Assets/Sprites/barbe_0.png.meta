@@ -5,33 +5,6 @@ TextureImporter:
   - first:
       213: 3633205188601264855
     second: barbe_0_0
-  - first:
-      213: 1546704445383063929
-    second: barbe_0_1
-  - first:
-      213: 209700810069556707
-    second: barbe_0_2
-  - first:
-      213: -4323064903688567546
-    second: barbe_0_3
-  - first:
-      213: -5522548472170284161
-    second: barbe_0_4
-  - first:
-      213: 4669385100019090731
-    second: barbe_0_5
-  - first:
-      213: 2935004730468965677
-    second: barbe_0_6
-  - first:
-      213: -8526077489985947543
-    second: barbe_0_7
-  - first:
-      213: -6514771470763236964
-    second: barbe_0_8
-  - first:
-      213: 2881753647065559298
-    second: barbe_0_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -73,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -130,10 +103,10 @@ TextureImporter:
       name: barbe_0_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 376
-        height: 1018
+        x: 0
+        y: 0
+        width: 28
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,209 +121,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: barbe_0_1
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 654
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 979339f8f7ff67510800000000000000
-      internalID: 1546704445383063929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: barbe_0_2
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 622
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3edbe4596c109e200800000000000000
-      internalID: 209700810069556707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: barbe_0_3
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 608
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6054faaef536104c0800000000000000
-      internalID: -4323064903688567546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: barbe_0_4
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 582
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f7bf96d9c67fb53b0800000000000000
-      internalID: -5522548472170284161
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: barbe_0_5
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 534
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b25c32e420dfcc040800000000000000
-      internalID: 4669385100019090731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: barbe_0_6
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 542
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d2d91b5804b3bb820800000000000000
-      internalID: 2935004730468965677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: barbe_0_7
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 518
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 968fee922b94da980800000000000000
-      internalID: -8526077489985947543
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: barbe_0_8
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 526
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c91ee443dd1e695a0800000000000000
-      internalID: -6514771470763236964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: barbe_0_9
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 486
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 201778f7cab0ef720800000000000000
-      internalID: 2881753647065559298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -361,15 +136,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       barbe_0_0: 3633205188601264855
-      barbe_0_1: 1546704445383063929
-      barbe_0_2: 209700810069556707
-      barbe_0_3: -4323064903688567546
-      barbe_0_4: -5522548472170284161
-      barbe_0_5: 4669385100019090731
-      barbe_0_6: 2935004730468965677
-      barbe_0_7: -8526077489985947543
-      barbe_0_8: -6514771470763236964
-      barbe_0_9: 2881753647065559298
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
