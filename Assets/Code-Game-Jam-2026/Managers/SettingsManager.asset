@@ -83,9 +83,9 @@ MonoBehaviour:
   walkToHotspotMarkers: 1
   dragThreshold: 0
   acceptUIInputFromCursorLocked: 0
-  maxInventorySlots: 0
+  maxInventorySlots: 5
   shareInventory: 0
-  inventoryDragDrop: 0
+  inventoryDragDrop: 1
   dragDropThreshold: 0
   allowInventoryInteractionsDuringConversations: 0
   inventoryDropLook: 0
@@ -104,13 +104,13 @@ MonoBehaviour:
   canReorderItems: 0
   selectInventoryDisplay: 0
   rightClickInventory: 0
-  reverseInventoryCombinations: 0
+  reverseInventoryCombinations: 1
   canMoveWhenActive: 1
   selectInvWithUnhandled: 0
   selectInvWithIconID: 0
   giveInvWithUnhandled: 0
   giveInvWithIconID: 0
-  autoDisableUnhandledHotspots: 0
+  autoDisableUnhandledHotspots: 1
   autoToggleGiveMode: 1
   clickPrefab: {fileID: 0}
   showClickPrefabWithStraightToCursorHeld: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   hotspotIconSize: 0.04
   playerFacesHotspots: 0
   onlyFaceHotspotOnSelect: 0
-  scaleHighlightWithMouseProximity: 0
+  scaleHighlightWithMouseProximity: 1
   highlightProximityFactor: 4
   occludeIcons: 0
   hideIconUnderInteractionMenu: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   speechAttentuationParameter: speechVolume
   defaultLanguage: 0
   defaultVoiceLanguage: 0
-  defaultShowSubtitles: 0
+  defaultShowSubtitles: 1
   defaultSfxVolume: 0.9
   defaultMusicVolume: 0.6
   defaultSpeechVolume: 1
