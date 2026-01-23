@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections;
@@ -19,7 +19,7 @@ public class WhackAMoleGame : MonoBehaviour
     public float baseVisibleTime = 0.90f;
     public float baseAppearStepTime = 0.06f;
 
-    [Header("Difficult� (paliers)")]
+    [Header("Difficulté (paliers)")]
     public float t1 = 20f;
     public float t2 = 10f;
     public float t3 = 5f;
@@ -37,8 +37,8 @@ public class WhackAMoleGame : MonoBehaviour
     public int scorePerHit = 1;
     public int scoreToWin = 30;
 
-    [Header("P�nalit� missclick")]
-    public float missPenaltySeconds = 0.5f;
+    [Header("Pénalité missclick")]
+    public float missPenaltySeconds = 0.2f;
 
     [Header("UI")]
     public TextMeshProUGUI scoreText;
@@ -59,9 +59,11 @@ public class WhackAMoleGame : MonoBehaviour
     private float timeLeft;
     private bool isRunning = false;
 
-    private Mole currentMole;
+    private Mole[] moles; // 2 taupes max
     private float minSpawnDelay;
     private float maxSpawnDelay;
+
+    private Vector3 penaltyStartPos;
 
     void Start()
     {
@@ -70,52 +72,49 @@ public class WhackAMoleGame : MonoBehaviour
         maxSpawnDelay = baseMaxSpawnDelay;
 
         if (penaltyText != null)
-            penaltyText.gameObject.SetActive(false);
-
-        UpdateUI();
-        StartCoroutine(GameLoop());
-    }
-
-    IEnumerator GameLoop()
-    {
-        isRunning = true;
-
-        currentMole = Instantiate(molePrefab);
-        currentMole.gameObject.SetActive(false);
-
-        while (timeLeft > 0f)
         {
-            timeLeft -= Time.deltaTime;
-            if (timeLeft < 0f) timeLeft = 0f;
-
-            ApplyDifficulty();
-            UpdateUI();
-
-            yield return null;
-
-            if (!currentMole.gameObject.activeSelf && timeLeft > 0f)
-            {
-                float delay = Random.Range(minSpawnDelay, maxSpawnDelay);
-                yield return new WaitForSeconds(delay);
-
-                if (timeLeft <= 0f) break;
-
-                int idx = Random.Range(0, holes.Length);
-                currentMole.SpawnAt(holes[idx].position);
-            }
+            penaltyText.gameObject.SetActive(false);
+            penaltyStartPos = penaltyText.rectTransform.localPosition;
         }
 
-        isRunning = false;
-        StartCoroutine(EndAndReturn());
+        // instancie 2 taupes
+        moles = new Mole[2];
+        for (int i = 0; i < 2; i++)
+        {
+            moles[i] = Instantiate(molePrefab);
+            moles[i].gameObject.SetActive(false);
+        }
+
+        isRunning = true;
+        UpdateUI();
+
+        // 2 boucles de spawn indépendantes
+        StartCoroutine(SpawnLoop(0));
+        StartCoroutine(SpawnLoop(1));
     }
 
     void Update()
     {
         if (!isRunning) return;
 
+        // ✅ TIMER TOUJOURS ACTIF (même pendant les WaitForSeconds)
+        timeLeft -= Time.deltaTime;
+        if (timeLeft < 0f) timeLeft = 0f;
+
+        ApplyDifficulty();
+        UpdateUI();
+
+        if (timeLeft <= 0f)
+        {
+            isRunning = false;
+            StartCoroutine(EndAndReturn());
+            return;
+        }
+
+        // clic
         if (Input.GetMouseButtonDown(0))
         {
-            PlaySound(hammerClick);
+            PlaySound(hammerClick, 1f);
 
             bool hitMole = false;
 
@@ -132,16 +131,69 @@ public class WhackAMoleGame : MonoBehaviour
                 }
             }
 
+            // missclick
             if (!hitMole)
             {
                 timeLeft -= missPenaltySeconds;
                 if (timeLeft < 0f) timeLeft = 0f;
 
-                PlaySound(buzzer);
+                PlaySound(buzzer, 0.5f);
                 StartCoroutine(ShowPenalty());
-                UpdateUI();
             }
         }
+    }
+
+    IEnumerator SpawnLoop(int moleIndex)
+    {
+        // Chaque taupe a sa boucle de spawn.
+        // moleIndex 0 = taupe principale
+        // moleIndex 1 = taupe secondaire (activée selon le temps / hasard)
+
+        while (true)
+        {
+            if (!isRunning) yield break;
+
+            // si taupe déjà active, on attend un peu et on re-teste
+            if (moles[moleIndex].gameObject.activeSelf)
+            {
+                yield return null;
+                continue;
+            }
+
+            // détermine si cette taupe a le droit de spawner
+            if (!IsMoleAllowed(moleIndex))
+            {
+                yield return null;
+                continue;
+            }
+
+            float delay = Random.Range(minSpawnDelay, maxSpawnDelay);
+            yield return new WaitForSeconds(delay);
+
+            if (!isRunning || timeLeft <= 0f) yield break;
+
+            // re-check autorisation juste avant spawn
+            if (!IsMoleAllowed(moleIndex)) continue;
+
+            int idx = Random.Range(0, holes.Length);
+            moles[moleIndex].SpawnAt(holes[idx].position);
+        }
+    }
+
+    bool IsMoleAllowed(int moleIndex)
+    {
+        // taupe 0 toujours autorisée
+        if (moleIndex == 0) return true;
+
+        // taupe 1 : règles
+        // >10s : jamais
+        if (timeLeft > 10f) return false;
+
+        // 5s..10s : parfois (30% de chance)
+        if (timeLeft > 5f) return Random.value < 0.30f;
+
+        // <=5s : toujours (donc 2 taupes)
+        return true;
     }
 
     IEnumerator HandleHit(Mole m)
@@ -155,23 +207,28 @@ public class WhackAMoleGame : MonoBehaviour
     {
         if (penaltyText == null) yield break;
 
-        penaltyText.gameObject.SetActive(true);
+        penaltyText.rectTransform.localPosition = penaltyStartPos;
         penaltyText.alpha = 1f;
+        penaltyText.text = "-" + missPenaltySeconds.ToString("0.0") + "s";
+        penaltyText.gameObject.SetActive(true);
 
-        Vector3 startPos = penaltyText.rectTransform.localPosition;
-        Vector3 upPos = startPos + Vector3.up * 20f;
+        Vector3 targetPos = penaltyStartPos + Vector3.up * 20f;
 
+        float duration = 0.5f;
         float t = 0f;
-        while (t < 0.5f)
+
+        while (t < duration)
         {
             t += Time.deltaTime;
-            penaltyText.rectTransform.localPosition = Vector3.Lerp(startPos, upPos, t / 0.5f);
-            penaltyText.alpha = Mathf.Lerp(1f, 0f, t / 0.5f);
+            float p = t / duration;
+
+            penaltyText.rectTransform.localPosition = Vector3.Lerp(penaltyStartPos, targetPos, p);
+            penaltyText.alpha = Mathf.Lerp(1f, 0f, p);
+
             yield return null;
         }
 
         penaltyText.gameObject.SetActive(false);
-        penaltyText.rectTransform.localPosition = startPos;
     }
 
     void ApplyDifficulty()
@@ -198,42 +255,39 @@ public class WhackAMoleGame : MonoBehaviour
         minSpawnDelay = Mathf.Max(0.05f, baseMinSpawnDelay * spawnMult);
         maxSpawnDelay = Mathf.Max(minSpawnDelay + 0.05f, baseMaxSpawnDelay * spawnMult);
 
-        if (currentMole != null)
+        for (int i = 0; i < moles.Length; i++)
         {
-            currentMole.visibleTime = Mathf.Max(0.2f, baseVisibleTime * moleMult);
-            currentMole.appearStepTime = Mathf.Max(0.03f, baseAppearStepTime * moleMult);
+            if (moles[i] == null) continue;
+            moles[i].visibleTime = Mathf.Max(0.2f, baseVisibleTime * moleMult);
+            moles[i].appearStepTime = Mathf.Max(0.03f, baseAppearStepTime * moleMult);
         }
     }
 
     void UpdateUI()
     {
-        if (scoreText != null)
-            scoreText.text = "Score: " + score;
-
-        if (timerText != null)
-            timerText.text = timeLeft.ToString("0.0") + "s";
+        if (scoreText != null) scoreText.text = "Score: " + score;
+        if (timerText != null) timerText.text = timeLeft.ToString("0.0") + "s";
     }
 
     IEnumerator EndAndReturn()
     {
         bool win = score >= scoreToWin;
 
-        if (win)
-            PlaySound(victoryMusic);
+        if (win) PlaySound(victoryMusic, 1f);
 
         if (endText != null)
         {
             endText.gameObject.SetActive(true);
-            endText.text = win ? "GAGN� !" : "PERDU !";
+            endText.text = win ? "GAGNÉ !" : "PERDU !";
         }
 
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(menuSceneName);
     }
 
-    void PlaySound(AudioClip clip)
+    void PlaySound(AudioClip clip, float volume)
     {
         if (clip != null && audioSource != null)
-            audioSource.PlayOneShot(clip);
+            audioSource.PlayOneShot(clip, volume);
     }
 }
