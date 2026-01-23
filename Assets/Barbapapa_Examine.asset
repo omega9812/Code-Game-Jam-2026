@@ -29,14 +29,14 @@ MonoBehaviour:
     linkedCutscene: {fileID: 0}
     linkedAsset: {fileID: 0}
   isEnabled: 1
-  isAssetFile: 0
+  isAssetFile: 1
   isBreakPoint: 0
   nodeRect:
     serializedVersion: 2
-    x: 0
-    y: 0
+    x: 14
+    y: 14
     width: 300
-    height: 60
+    height: 186.05
   overrideColor: {r: 1, g: 1, b: 1, a: 1}
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
@@ -44,10 +44,10 @@ MonoBehaviour:
   constantID: 0
   parameterID: -1
   messageParameterID: -1
-  isPlayer: 0
+  isPlayer: 1
   playerID: -1
   speaker: {fileID: 0}
-  messageText: 
+  messageText: Ma maxi, mega barbapapa. Je l'adore
   lineID: -1
   multiLineIDs: 
   isBackground: 0
