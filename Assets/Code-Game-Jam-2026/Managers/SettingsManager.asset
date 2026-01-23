@@ -45,7 +45,7 @@ MonoBehaviour:
   playerSwitching: 1
   legacyPlayer: {fileID: 0}
   playerPrefab:
-    playerOb: {fileID: 3402324189887888558, guid: 1e7c9a82b8086024f8a66470853f3c2f, type: 3}
+    playerOb: {fileID: 1037242158684598134, guid: 35c36abfb263c30489a1bc141b14e841, type: 3}
     ID: 0
     isDefault: 0
     startingSceneIndex: 0
@@ -270,4 +270,4 @@ MonoBehaviour:
         id: 0
         cutscene: {fileID: 0}
         actionListAsset: {fileID: 11400000, guid: 2f0c05c715db1cd4aaa0922b032ee1ad, type: 2}
-        parameterIDs: 00000000
+        parameterIDs: 
