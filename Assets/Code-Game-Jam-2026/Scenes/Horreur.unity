@@ -1603,8 +1603,13 @@ Transform:
   m_Children:
   - {fileID: 1365875185}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 877682696}
   - {fileID: 1517592333}
+=======
+  - {fileID: 1978939411}
+  - {fileID: 1853672119}
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
   - {fileID: 1978939411}
   - {fileID: 1853672119}
@@ -2045,7 +2050,10 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 --- !u!114 &278104184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2530,7 +2538,11 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 2062474207}
+=======
+  - {fileID: 555338107}
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
   - {fileID: 555338107}
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
@@ -2565,7 +2577,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439719221}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Mesh: {fileID: 1488094505}
+=======
+  m_Mesh: {fileID: 19576600}
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
   m_Mesh: {fileID: 19576600}
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
@@ -2789,8 +2805,14 @@ MonoBehaviour:
   categoryID: 0
   categoryIDParameterID: -1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &543613521
 GameObject:
+=======
+--- !u!21 &555338107
+Material:
+  serializedVersion: 8
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
 --- !u!21 &555338107
 Material:
@@ -2800,6 +2822,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   serializedVersion: 6
   m_Component:
@@ -2915,6 +2938,8 @@ BoxCollider:
   m_Size: {x: 0.27544641, y: 1.913377, z: 1}
   m_Center: {x: -1.3677232, y: -0.0658685, z: 0}
 =======
+=======
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
   m_Name: Light2D/Internal/Multiply HDR
   m_Shader: {fileID: 4800000, guid: e787e142611e2a3489bf949e9d1dbda7, type: 3}
   m_Parent: {fileID: 0}
@@ -2940,6 +2965,9 @@ BoxCollider:
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+<<<<<<< HEAD
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
+=======
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 --- !u!1 &570693373
 GameObject:
@@ -3832,7 +3860,10 @@ Material:
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 --- !u!43 &638704997
 Mesh:
   m_ObjectHideFlags: 0
@@ -4855,6 +4886,7 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &877682695
 GameObject:
   m_ObjectHideFlags: 1
@@ -4960,6 +4992,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FunkyCode.OnRenderMode
   meshRenderer: {fileID: 877682698}
   meshFilter: {fileID: 877682697}
+=======
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 --- !u!114 &886834653
@@ -5826,7 +5860,11 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 2062474207}
+=======
+  - {fileID: 555338107}
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
   - {fileID: 555338107}
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
@@ -5861,7 +5899,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971423334}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Mesh: {fileID: 2058328466}
+=======
+  m_Mesh: {fileID: 638704997}
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
   m_Mesh: {fileID: 638704997}
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
@@ -6920,6 +6962,7 @@ CanvasRenderer:
   m_GameObject: {fileID: 1049749430}
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!43 &1085568060
 Mesh:
   m_ObjectHideFlags: 0
@@ -7098,6 +7141,8 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+=======
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 --- !u!1 &1102709766
@@ -9699,6 +9744,7 @@ Animator:
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1457660238
 GameObject:
   m_ObjectHideFlags: 0
@@ -9875,6 +9921,8 @@ Material:
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+=======
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 --- !u!1 &1478236350
@@ -10374,6 +10422,7 @@ MonoBehaviour:
   mouthLayer: 0
   waitTimeOffset: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1517592332
 GameObject:
   m_ObjectHideFlags: 1
@@ -10560,6 +10609,8 @@ MonoBehaviour:
   relativeMarkerID: 0
   relativeMarkerParameterID: -1
   forceReload: 0
+=======
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 --- !u!1 &1593440863
@@ -11871,6 +11922,9 @@ MonoBehaviour:
   returnToLast: 1
   retainPreviousSpeed: 0
   waitForAnimation: 0
+<<<<<<< HEAD
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
+=======
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 --- !u!1001 &1845717061
 PrefabInstance:
@@ -12633,6 +12687,9 @@ MonoBehaviour:
 --- !u!114 &2045089772
 MonoBehaviour:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12655,8 +12712,13 @@ MonoBehaviour:
   linkedAsset: {fileID: 0}
   endings:
   - resultAction: 2
+<<<<<<< HEAD
     skipAction: 4
     skipActionActual: {fileID: 192802882}
+=======
+    skipAction: 11
+    skipActionActual: {fileID: 749321288}
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
     linkedCutscene: {fileID: 0}
     linkedAsset: {fileID: 0}
   isEnabled: 1
@@ -12678,7 +12740,11 @@ MonoBehaviour:
   isPlayer: 1
   playerID: -1
   speaker: {fileID: 0}
+<<<<<<< HEAD
   messageText: Tu veux ma mort?
+=======
+  messageText: OUI!
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
   lineID: -1
   multiLineIDs: 
   isBackground: 0
@@ -12692,6 +12758,7 @@ MonoBehaviour:
   mouthClip2D: 
   mouthLayer: 0
   waitTimeOffset: 0
+<<<<<<< HEAD
 --- !u!43 &2058328466
 Mesh:
   m_ObjectHideFlags: 0
@@ -12904,6 +12971,8 @@ Material:
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+=======
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 --- !u!1 &2083870051
 GameObject:
   m_ObjectHideFlags: 0
@@ -13266,6 +13335,9 @@ MonoBehaviour:
   itemRemoveMethod: 0
   categoryID: 0
   categoryIDParameterID: -1
+<<<<<<< HEAD
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
+=======
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 --- !u!1 &2121230668
 GameObject:
@@ -16291,9 +16363,12 @@ SceneRoots:
   - {fileID: 1325942881}
   - {fileID: 1272594941}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 1642453558}
   - {fileID: 8202825227498046656}
   - {fileID: 62061936}
   - {fileID: 5552355228571103321}
+=======
+>>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
 =======
 >>>>>>> parent of ef82e9f (Merge branch 'Minegames' into felix-work-branch)
