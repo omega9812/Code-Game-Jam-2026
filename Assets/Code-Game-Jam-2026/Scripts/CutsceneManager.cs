@@ -23,6 +23,9 @@ public class CutsceneManager : MonoBehaviour
     public string clownInviteText = "Hey, come to the fair with me!";
     public UnityEngine.UI.Text dialogueText;
     
+    [Header("Scene Transition")]
+    [SerializeField] private string nextSceneName = "New Scene";
+    
     private Animator bobAnimator;
     private Animator clownAnimator;
     private bool cutsceneStarted = false;
@@ -139,7 +142,31 @@ public class CutsceneManager : MonoBehaviour
         }
         
         yield return new WaitForSeconds(1.0f);
-        
+
         Debug.Log("Cutscene completed");
+
+        // Change scene to "New Scene" (via AC if possible, fallback to Unity)
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            bool loaded = false;
+
+            try
+            {
+                if (KickStarter.sceneChanger != null)
+                {
+                    KickStarter.sceneChanger.ChangeScene(nextSceneName, false);
+                    loaded = true;
+                }
+            }
+            catch
+            {
+                // ignore and fallback
+            }
+
+            if (!loaded)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
+            }
+        }
     }
 }
