@@ -168,7 +168,7 @@ public class UIHammerStrengthGame : MonoBehaviour
         
         if (instructionText != null)
         {
-            instructionText.text = "Click to start! Spam click to fill the meter!";
+            instructionText.text = "Click to pour commencer! Spam des clicks!";
         }
     }
 
@@ -206,7 +206,7 @@ public class UIHammerStrengthGame : MonoBehaviour
 
             if (instructionText != null)
             {
-                instructionText.text = "SPAM CLICK! GO GO GO!";
+                instructionText.text = "DES CLICKS! DES CLICKS! DES CLICKS!";
             }
 
             AddCharge();
@@ -274,7 +274,7 @@ public class UIHammerStrengthGame : MonoBehaviour
         }
 
         if (timerText != null)
-            timerText.text = "TIME!";
+            timerText.text = "TEMPS!";
 
         isCharging = false;
 
@@ -368,9 +368,9 @@ public class UIHammerStrengthGame : MonoBehaviour
             if (instructionText != null)
             {
                 if (normalized >= 1f)
-                    instructionText.text = "PERFECT! MAXIMUM POWER!";
+                    instructionText.text = "MAXIMUM! TU ES UN CHAMPION!";
                 else
-                    instructionText.text = "WINNER! Great strength!";
+                    instructionText.text = "VICTOIRE! Tu as du muscle!";
             }
 
             Play(victoryMusic, victoryVolume);

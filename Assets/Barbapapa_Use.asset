@@ -120,7 +120,7 @@ MonoBehaviour:
     x: 14
     y: 897
     width: 300
-    height: 212
+    height: 226.05
   overrideColor: {r: 1, g: 1, b: 1, a: 1}
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   isPlayer: 0
   playerID: -1
   speaker: {fileID: 0}
-  messageText: Elle a un gout bizarre.
+  messageText: Elle a un gout bizarre. Je me sens vraiment pas bien
   lineID: -1
   multiLineIDs: 
   isBackground: 0
