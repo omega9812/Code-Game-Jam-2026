@@ -126,7 +126,7 @@ MonoBehaviour:
   - label: Batonnet
     id: 2
     altLabel: 
-    carryOnStart: 1
+    carryOnStart: 0
     carryOnStartNotDefault: 0
     carryOnStartIDs: 00000000
     vars: []
@@ -181,7 +181,7 @@ MonoBehaviour:
   - label: Gilbert
     id: 3
     altLabel: 
-    carryOnStart: 1
+    carryOnStart: 0
     carryOnStartNotDefault: 0
     carryOnStartIDs: 00000000
     vars: []
