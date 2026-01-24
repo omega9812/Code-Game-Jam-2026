@@ -233,7 +233,17 @@ MonoBehaviour:
   playMusicWhilePaused: 0
   playAmbienceWhilePaused: 0
   musicStorages: []
-  ambienceStorages: []
+  ambienceStorages:
+  - ID: 0
+    label: Heaven
+    audioClip: {fileID: 8300000, guid: 6b0997c0f4694854f9081afe0efb620a, type: 3}
+    relativeVolume: 1
+    overrideMixerGroup: {fileID: 0}
+  - ID: 1
+    label: Hell
+    audioClip: {fileID: 8300000, guid: 6b4da71ab58db6b42b7e19b93fa28ae4, type: 3}
+    relativeVolume: 1
+    overrideMixerGroup: {fileID: 0}
   loadAmbienceFadeTime: 0
   crossfadeAmbienceWhenLoading: 0
   restartAmbienceTrackWhenLoading: 0
