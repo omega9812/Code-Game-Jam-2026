@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
-    guid: 7101625497c4f3b4f81ad1cae86c7219
-  - enabled: 0
-    path: Assets/Scenes/MiniGames.unity
-    guid: 0907f55d38c27ff46b3cd0a039e38747
+    path: Assets/Code-Game-Jam-2026/TitleScreen/TitleScreen.unity
+    guid: 17850156a1bf3b24a9939cfeaacc1a86
   - enabled: 1
-    path: Assets/Scenes/JeuBarbeAPapa.unity
-    guid: 25262d96d7759534eb1a4def1041c961
+    path: Assets/Code-Game-Jam-2026/Scenes/New Scene.unity
+    guid: d7cf6350f99f82040ada5017c2fcd4f7
+  - enabled: 1
+    path: Assets/Code-Game-Jam-2026/Scenes/Horreur.unity
+    guid: 48823eba4ffce5f46ae24c09af344449
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

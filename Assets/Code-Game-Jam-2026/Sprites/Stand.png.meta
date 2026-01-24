@@ -1,0 +1,1937 @@
+fileFormatVersion: 2
+guid: 90742c2a856ce3240b063b3966481610
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 716505280579113713
+    second: Mayo 1_0
+  - first:
+      213: -407225372987263346
+    second: Mayo 1_1
+  - first:
+      213: 5743254272876051231
+    second: Mayo 1_2
+  - first:
+      213: 6257531693922681489
+    second: Mayo 1_3
+  - first:
+      213: -7191131164330240733
+    second: Mayo 1_4
+  - first:
+      213: 6993554732526096286
+    second: Mayo 1_5
+  - first:
+      213: -7202735087316830521
+    second: Mayo 1_6
+  - first:
+      213: 7665383750959738624
+    second: Mayo 1_7
+  - first:
+      213: -8336185803793717406
+    second: Mayo 1_8
+  - first:
+      213: 1836625381465077639
+    second: Mayo 1_9
+  - first:
+      213: -7995869440744216880
+    second: Mayo 1_10
+  - first:
+      213: 6055595765625285425
+    second: Mayo 1_11
+  - first:
+      213: 3329083007703170822
+    second: Mayo 1_12
+  - first:
+      213: -5751933188471820410
+    second: Mayo 1_13
+  - first:
+      213: -5921039008184624602
+    second: Mayo 1_14
+  - first:
+      213: 8265674645832770778
+    second: Mayo 1_15
+  - first:
+      213: 4997203184581553873
+    second: Mayo 1_16
+  - first:
+      213: 9169854102776264288
+    second: Mayo 1_17
+  - first:
+      213: 2828898392066907073
+    second: Mayo 1_18
+  - first:
+      213: 2611185990483159361
+    second: Mayo 1_19
+  - first:
+      213: -1804079485176534723
+    second: Mayo 1_20
+  - first:
+      213: 1825546445472239930
+    second: Mayo 1_21
+  - first:
+      213: -3683372853987909873
+    second: Mayo 1_22
+  - first:
+      213: -3720400870683264043
+    second: Mayo 1_23
+  - first:
+      213: 2579988997712182724
+    second: Mayo 1_24
+  - first:
+      213: 5759971451475846352
+    second: Mayo 1_25
+  - first:
+      213: -3133361018696131305
+    second: Mayo 1_26
+  - first:
+      213: -8189873443461046129
+    second: Mayo 1_27
+  - first:
+      213: -3075551961037284573
+    second: Mayo 1_28
+  - first:
+      213: -8245173129979734147
+    second: Mayo 1_29
+  - first:
+      213: -8310644849424177476
+    second: Mayo 1_30
+  - first:
+      213: 4156715300531511368
+    second: Mayo 1_31
+  - first:
+      213: -3747577433185442196
+    second: Mayo 1_32
+  - first:
+      213: -8665921657730620353
+    second: Mayo 1_33
+  - first:
+      213: -6251524155319181671
+    second: Mayo 1_34
+  - first:
+      213: 1984793793163151300
+    second: Mayo 1_35
+  - first:
+      213: 4739164560744992021
+    second: Mayo 1_36
+  - first:
+      213: 8973793353193996991
+    second: Mayo 1_37
+  - first:
+      213: 7185513346762236269
+    second: Mayo 1_38
+  - first:
+      213: 3808886036203492188
+    second: Mayo 1_39
+  - first:
+      213: 527213645032967534
+    second: Mayo 1_40
+  - first:
+      213: 6940072171319986047
+    second: Mayo 1_41
+  - first:
+      213: 2717695585037893131
+    second: Mayo 1_42
+  - first:
+      213: 7944671722458088839
+    second: Mayo 1_43
+  - first:
+      213: 4719128330787070623
+    second: Mayo 1_44
+  - first:
+      213: -2161498325921160614
+    second: Mayo 1_45
+  - first:
+      213: 8325455537364596222
+    second: Mayo 1_46
+  - first:
+      213: -4114011752062871333
+    second: Mayo 1_47
+  - first:
+      213: -5809837882571749671
+    second: Mayo 1_48
+  - first:
+      213: -2838401912747633575
+    second: Mayo 1_49
+  - first:
+      213: -3640136598205655588
+    second: Mayo 1_50
+  - first:
+      213: 2746884037209090165
+    second: Mayo 1_51
+  - first:
+      213: 5507956775918747010
+    second: Mayo 1_52
+  - first:
+      213: -5231993774056940363
+    second: Mayo 1_53
+  - first:
+      213: -3984144710779383138
+    second: Mayo 1_54
+  - first:
+      213: -483663692450697963
+    second: Mayo 1_55
+  - first:
+      213: 2666657884627342786
+    second: Mayo 1_56
+  - first:
+      213: -5425135221137405220
+    second: Mayo 1_57
+  - first:
+      213: -2725861375329404758
+    second: Mayo 1_58
+  - first:
+      213: -7681832826361223446
+    second: Mayo 1_59
+  - first:
+      213: -8232768653800367700
+    second: Mayo 1_60
+  - first:
+      213: -8412424880707273463
+    second: Mayo 1_61
+  - first:
+      213: 6686967215921462161
+    second: Mayo 1_62
+  - first:
+      213: 1726467609385881339
+    second: Mayo 1_63
+  - first:
+      213: 492508279728985964
+    second: Mayo 1_64
+  - first:
+      213: 4466779242976143315
+    second: Mayo 1_65
+  - first:
+      213: -1616353362286073177
+    second: Mayo 1_66
+  - first:
+      213: -8536660159557693223
+    second: Mayo 1_67
+  - first:
+      213: 8738664538039262095
+    second: Mayo 1_68
+  - first:
+      213: 6377263959670673848
+    second: Mayo 1_69
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mayo 1_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1336
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f21c98a1c981f900800000000000000
+      internalID: 716505280579113713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1527
+        width: 198
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86719b4eae395af0800000000000000
+      internalID: -407225372987263346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_2
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 1527
+        width: 202
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b7585055324bf40800000000000000
+      internalID: 5743254272876051231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_3
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 1336
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192820bfbe737d650800000000000000
+      internalID: 6257531693922681489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_4
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1527
+        width: 202
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325dad86e48f33c90800000000000000
+      internalID: -7191131164330240733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_5
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1336
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f487dc9f81e0160800000000000000
+      internalID: 6993554732526096286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_6
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1527
+        width: 202
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6fc3d899eba0c90800000000000000
+      internalID: -7202735087316830521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_7
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1336
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00fa10798e9e06a60800000000000000
+      internalID: 7665383750959738624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_8
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 1527
+        width: 202
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267a83fad2bef4c80800000000000000
+      internalID: -8336185803793717406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_9
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 1336
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78731b7bd010d7910800000000000000
+      internalID: 1836625381465077639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_10
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1527
+        width: 202
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d62a0a8b17f80190800000000000000
+      internalID: -7995869440744216880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_11
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1336
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13b6471d34cc90450800000000000000
+      internalID: 6055595765625285425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_12
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 1527
+        width: 202
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60fbfe57b57433e20800000000000000
+      internalID: 3329083007703170822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_13
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 1336
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f6b597d370d20b0800000000000000
+      internalID: -5751933188471820410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_14
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1527
+        width: 201
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a9cef946e34dda0800000000000000
+      internalID: -5921039008184624602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_15
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1336
+        width: 201
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad4a0d50c4395b270800000000000000
+      internalID: 8265674645832770778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1145
+        width: 226
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de2f6fe1d1a95540800000000000000
+      internalID: 4997203184581553873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_17
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 954
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0663326f8bdd14f70800000000000000
+      internalID: 9169854102776264288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_18
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 1145
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cb52d47914424720800000000000000
+      internalID: 2828898392066907073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_19
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 954
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 149a93dd2dbcc3420800000000000000
+      internalID: 2611185990483159361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_20
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 954
+        width: 206
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39ab73444f96f6e0800000000000000
+      internalID: -1804079485176534723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_21
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1145
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a31995be1d4a55910800000000000000
+      internalID: 1825546445472239930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_22
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1145
+        width: 204
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0fdbb697e702ecc0800000000000000
+      internalID: -3683372853987909873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_23
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 954
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dbbed0ae1b7e5cc0800000000000000
+      internalID: -3720400870683264043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_24
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 1145
+        width: 204
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cdfc05f256fdc320800000000000000
+      internalID: 2579988997712182724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_25
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 954
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d4eb9974878fef40800000000000000
+      internalID: 5759971451475846352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_26
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1145
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71d9f8731c01484d0800000000000000
+      internalID: -3133361018696131305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_27
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 954
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f806917be79b75e80800000000000000
+      internalID: -8189873443461046129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_28
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 1145
+        width: 202
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32bdd1259c17155d0800000000000000
+      internalID: -3075551961037284573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_29
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 954
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7756fb19b2439d80800000000000000
+      internalID: -8245173129979734147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_30
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1145
+        width: 201
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb664a78a88aaac80800000000000000
+      internalID: -8310644849424177476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_31
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 954
+        width: 197
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840ac98ea8e9fa930800000000000000
+      internalID: 4156715300531511368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_32
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 763
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6626b61e2eedfbc0800000000000000
+      internalID: -3747577433185442196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_33
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 572
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f342a939a267cb780800000000000000
+      internalID: -8665921657730620353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_34
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 763
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99e1d6917ef1e39a0800000000000000
+      internalID: -6251524155319181671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_35
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 572
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c7c3e160776b8b10800000000000000
+      internalID: 1984793793163151300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_36
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 763
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51d435f0f05e4c140800000000000000
+      internalID: 4739164560744992021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_37
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 572
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb2c3e07281598c70800000000000000
+      internalID: 8973793353193996991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_38
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 763
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d616792815218b360800000000000000
+      internalID: 7185513346762236269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_39
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 572
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c53dad96ba1ebd430800000000000000
+      internalID: 3808886036203492188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_40
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 763
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6dcde0540a015700800000000000000
+      internalID: 527213645032967534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_41
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 572
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f770a17aed6105060800000000000000
+      internalID: 6940072171319986047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_42
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 763
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0eb4d15cb137b520800000000000000
+      internalID: 2717695585037893131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_43
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 572
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7858432c6d4214e60800000000000000
+      internalID: 7944671722458088839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_44
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 763
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f92ab0eb636bd7140800000000000000
+      internalID: 4719128330787070623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_45
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 572
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a522ed489b0d002e0800000000000000
+      internalID: -2161498325921160614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_46
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 763
+        width: 197
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5fce973b5f98370800000000000000
+      internalID: 8325455537364596222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_47
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 572
+        width: 197
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd89284cb1818e6c0800000000000000
+      internalID: -4114011752062871333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_48
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 381
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d604b64a3f4f5fa0800000000000000
+      internalID: -5809837882571749671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_49
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 190
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95453e4bf78fb98d0800000000000000
+      internalID: -2838401912747633575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_50
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 381
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd59d0adc03ab7dc0800000000000000
+      internalID: -3640136598205655588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_51
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 190
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578e90d6a74ee1620800000000000000
+      internalID: 2746884037209090165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_52
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 381
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28db7da5181307c40800000000000000
+      internalID: 5507956775918747010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_53
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 190
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bcd74ef1693467b0800000000000000
+      internalID: -5231993774056940363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_54
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 381
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e925e349e7975b8c0800000000000000
+      internalID: -3984144710779383138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_55
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 190
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51de8bc2f6ea949f0800000000000000
+      internalID: -483663692450697963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_56
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 381
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c515bea73fd10520800000000000000
+      internalID: 2666657884627342786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_57
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 190
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda05ad824c06b4b0800000000000000
+      internalID: -5425135221137405220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_58
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 381
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa87888758bcb2ad0800000000000000
+      internalID: -2725861375329404758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_59
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 190
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae6edc89eb5a46590800000000000000
+      internalID: -7681832826361223446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_60
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 381
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca9124847845fbd80800000000000000
+      internalID: -8232768653800367700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_61
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 190
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90df8c55420114b80800000000000000
+      internalID: -8412424880707273463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_62
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 381
+        width: 197
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b7ea9f041eccc50800000000000000
+      internalID: 6686967215921462161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_63
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 190
+        width: 197
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfec9adb425a5f710800000000000000
+      internalID: 1726467609385881339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_64
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 198
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c675f26cbadb5d600800000000000000
+      internalID: 492508279728985964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_65
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 198
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d76ea33e003dfd30800000000000000
+      internalID: 4466779242976143315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_66
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 0
+        width: 198
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa2e694e2f8199e0800000000000000
+      internalID: -1616353362286073177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_67
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 0
+        width: 198
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0955560d0b78980800000000000000
+      internalID: -8536660159557693223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_68
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 0
+        width: 198
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b12211919f54970800000000000000
+      internalID: 8738664538039262095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mayo 1_69
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 0
+        width: 198
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1521b78c7908850800000000000000
+      internalID: 6377263959670673848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mayo 1_0: 716505280579113713
+      Mayo 1_1: -407225372987263346
+      Mayo 1_10: -7995869440744216880
+      Mayo 1_11: 6055595765625285425
+      Mayo 1_12: 3329083007703170822
+      Mayo 1_13: -5751933188471820410
+      Mayo 1_14: -5921039008184624602
+      Mayo 1_15: 8265674645832770778
+      Mayo 1_16: 4997203184581553873
+      Mayo 1_17: 9169854102776264288
+      Mayo 1_18: 2828898392066907073
+      Mayo 1_19: 2611185990483159361
+      Mayo 1_2: 5743254272876051231
+      Mayo 1_20: -1804079485176534723
+      Mayo 1_21: 1825546445472239930
+      Mayo 1_22: -3683372853987909873
+      Mayo 1_23: -3720400870683264043
+      Mayo 1_24: 2579988997712182724
+      Mayo 1_25: 5759971451475846352
+      Mayo 1_26: -3133361018696131305
+      Mayo 1_27: -8189873443461046129
+      Mayo 1_28: -3075551961037284573
+      Mayo 1_29: -8245173129979734147
+      Mayo 1_3: 6257531693922681489
+      Mayo 1_30: -8310644849424177476
+      Mayo 1_31: 4156715300531511368
+      Mayo 1_32: -3747577433185442196
+      Mayo 1_33: -8665921657730620353
+      Mayo 1_34: -6251524155319181671
+      Mayo 1_35: 1984793793163151300
+      Mayo 1_36: 4739164560744992021
+      Mayo 1_37: 8973793353193996991
+      Mayo 1_38: 7185513346762236269
+      Mayo 1_39: 3808886036203492188
+      Mayo 1_4: -7191131164330240733
+      Mayo 1_40: 527213645032967534
+      Mayo 1_41: 6940072171319986047
+      Mayo 1_42: 2717695585037893131
+      Mayo 1_43: 7944671722458088839
+      Mayo 1_44: 4719128330787070623
+      Mayo 1_45: -2161498325921160614
+      Mayo 1_46: 8325455537364596222
+      Mayo 1_47: -4114011752062871333
+      Mayo 1_48: -5809837882571749671
+      Mayo 1_49: -2838401912747633575
+      Mayo 1_5: 6993554732526096286
+      Mayo 1_50: -3640136598205655588
+      Mayo 1_51: 2746884037209090165
+      Mayo 1_52: 5507956775918747010
+      Mayo 1_53: -5231993774056940363
+      Mayo 1_54: -3984144710779383138
+      Mayo 1_55: -483663692450697963
+      Mayo 1_56: 2666657884627342786
+      Mayo 1_57: -5425135221137405220
+      Mayo 1_58: -2725861375329404758
+      Mayo 1_59: -7681832826361223446
+      Mayo 1_6: -7202735087316830521
+      Mayo 1_60: -8232768653800367700
+      Mayo 1_61: -8412424880707273463
+      Mayo 1_62: 6686967215921462161
+      Mayo 1_63: 1726467609385881339
+      Mayo 1_64: 492508279728985964
+      Mayo 1_65: 4466779242976143315
+      Mayo 1_66: -1616353362286073177
+      Mayo 1_67: -8536660159557693223
+      Mayo 1_68: 8738664538039262095
+      Mayo 1_69: 6377263959670673848
+      Mayo 1_7: 7665383750959738624
+      Mayo 1_8: -8336185803793717406
+      Mayo 1_9: 1836625381465077639
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

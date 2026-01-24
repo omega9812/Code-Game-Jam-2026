@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using AC; // Adventure Creator
 using System.Collections;
+using System.Collections.Generic;
 
 public class EatCottonCandy : MonoBehaviour
-{   
-    [Header("Sprites (ordre : complet -> ... -> dernier)")]
+{
+    [Header("Cotton Candy Image")]
+    public GameObject cottonCandyImageObject;
+
+    [Header("Sprites (ordre complet - ... - dernier)")]
     public Sprite[] stages;
 
     [Header("Nombre de clics pour passer au sprite suivant")]
     public int clicksPerStage = 5;
 
-    [Header("Dernier sprite : clics supplémentaires avant fin")]
+    [Header("Dernier sprite: clics supplmentaires avant fin")]
     public int finishClicksNeeded = 5;
 
     [Header("Effet de clic (recul)")]
@@ -22,158 +28,264 @@ public class EatCottonCandy : MonoBehaviour
     public ParticleSystem smokePS;
     public float disappearDuration = 0.25f;
     public float waitAfterSmoke = 0.2f;
-    public string menuSceneName = "MenuScene";
 
     [Header("Sons")]
-    public AudioClip crunchClip;   // son à chaque clic
-    public AudioClip pouffClip;    // son à la fin (fumée)
+    public AudioClip crunchClip;
+    public AudioClip pouffClip;
     [Range(0f, 1f)] public float crunchVolume = 0.8f;
     [Range(0f, 1f)] public float pouffVolume = 1f;
 
     [Header("Timing son")]
-    public float crunchBeforeSpriteDelay = 0.04f; // 40 ms
+    public float crunchBeforeSpriteDelay = 0.04f;
 
-    private SpriteRenderer sr;
-    private Camera cam;
+    [Header("Canvas Control")]
+    public Canvas canvas;
+
+    // References
+    private Image uiImage;
+    private RectTransform rectTransform;
+    private CanvasGroup canvasGroup;
     private AudioSource audioSrc;
 
+    // Cache raycast helpers
+    private EventSystem eventSystem;
+    private PointerEventData pointerEventData;
+    private readonly List<RaycastResult> raycastResults = new List<RaycastResult>();
+
+    // State
     private int clickCount = 0;
     private int stageIndex = 0;
     private int finishClicks = 0;
-
     private Vector3 originalScale;
     private bool canClick = true;
     private bool isFinishing = false;
 
+    void Awake()
+    {
+    }
+
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        cam = Camera.main;
         audioSrc = GetComponent<AudioSource>();
-
-        originalScale = transform.localScale;
-
-        clickCount = 0;
-        stageIndex = 0;
-        finishClicks = 0;
-
-        if (sr == null)
+        if (audioSrc == null)
         {
-            Debug.LogError("Il manque un SpriteRenderer sur l'objet.");
+            audioSrc = gameObject.AddComponent<AudioSource>();
+        }
+
+        if (cottonCandyImageObject == null)
+        {
+            Debug.LogError("Cotton Candy Image Object not assigned!");
             enabled = false;
             return;
         }
 
-        // Met le premier sprite si stages est rempli
-        if (stages != null && stages.Length > 0 && stages[0] != null)
-            sr.sprite = stages[0];
-        else
-            Debug.LogWarning("Stages non configuré ou stages[0] vide : garde le sprite actuel.");
+        uiImage = cottonCandyImageObject.GetComponent<Image>();
+        rectTransform = cottonCandyImageObject.GetComponent<RectTransform>();
 
-        // AudioSource recommandé mais pas obligatoire
-        if (audioSrc != null)
-            audioSrc.playOnAwake = false;
+        if (uiImage == null)
+        {
+            Debug.LogError("Il manque un Image sur l'objet cottonCandyImageObject.");
+            enabled = false;
+            return;
+        }
 
-        // Ne doit pas jouer au démarrage
-        if (smokePS != null)
-            smokePS.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        // Make sure the image can receive raycasts
+        uiImage.raycastTarget = true;
+
+        originalScale = rectTransform.localScale;
+
+        if (audioSrc != null) audioSrc.playOnAwake = false;
+        if (smokePS != null) smokePS.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+
+        // Setup CanvasGroup (keep as fade only)
+        if (canvas != null)
+        {
+            canvasGroup = canvas.GetComponent<CanvasGroup>();
+            if (canvasGroup == null)
+            {
+                canvasGroup = canvas.gameObject.AddComponent<CanvasGroup>();
+            }
+
+            canvasGroup.alpha = 0f;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+            canvas.gameObject.SetActive(false);
+        }
+
+        // Ensure EventSystem exists + cache it
+        eventSystem = FindObjectOfType<EventSystem>();
+        if (eventSystem == null)
+        {
+            Debug.LogWarning("No EventSystem found in scene! UI clicks won't work reliably. Creating one...");
+            GameObject eventSystemObj = new GameObject("EventSystem");
+            eventSystem = eventSystemObj.AddComponent<EventSystem>();
+            eventSystemObj.AddComponent<StandaloneInputModule>();
+        }
+
+        pointerEventData = new PointerEventData(eventSystem);
+
+        // Optional: prove we are targeting the right Image
+        Debug.Log($"EatCottonCandy ready. Target Image='{cottonCandyImageObject.name}', raycastTarget={uiImage.raycastTarget}");
     }
 
     void Update()
     {
+        // Only accept clicks while minigame is active
         if (!canClick || isFinishing) return;
+        if (canvas == null || !canvas.gameObject.activeInHierarchy) return;
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (cam == null) cam = Camera.main;
-
-            Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
+            // Raycast UI under cursor and see if we hit the candy object (or its children)
+            if (IsPointerOverCottonCandyUI(Input.mousePosition))
             {
                 HandleClick();
             }
         }
     }
 
-    void HandleClick()
+    // New helper: robust UI hit test
+    private bool IsPointerOverCottonCandyUI(Vector2 screenPos)
     {
-        if (stages == null || stages.Length == 0) return;
+        if (eventSystem == null || uiImage == null) return false;
 
-        bool isLastStage = stageIndex >= stages.Length - 1;
+        pointerEventData.position = screenPos;
+        raycastResults.Clear();
+        eventSystem.RaycastAll(pointerEventData, raycastResults);
 
-        // ---- Dernier sprite : clics supplémentaires ----
-        if (isLastStage)
+        if (raycastResults.Count == 0) return false;
+
+        Transform target = cottonCandyImageObject.transform;
+        for (int i = 0; i < raycastResults.Count; i++)
         {
-            finishClicks++;
+            var hitGO = raycastResults[i].gameObject;
+            if (hitGO == null) continue;
 
-            // Son crunch aussi sur les bouchées finales (optionnel)
-            StartCoroutine(ClickEffect(true));
-
-            if (finishClicks >= finishClicksNeeded)
+            // accept direct hit or any child hit (in case the Image has nested graphics)
+            if (hitGO.transform == target || hitGO.transform.IsChildOf(target))
             {
-                StartCoroutine(FinishCandy());
+                return true;
             }
-            return;
+        }
+        return false;
+    }
+
+    public void StartMinigame()
+    {
+        Debug.Log("StartMinigame called");
+        
+        // Reset state
+        clickCount = 0;
+        stageIndex = 0;
+        finishClicks = 0;
+        canClick = true;
+        isFinishing = false;
+
+        // Set first sprite
+        if (stages != null && stages.Length > 0 && stages[0] != null)
+        {
+            uiImage.sprite = stages[0];
+        }
+        
+        // Reset scale
+        rectTransform.localScale = originalScale;
+
+        // Show Canvas
+        if (canvas != null)
+        {
+            canvas.gameObject.SetActive(true);
+            StartCoroutine(FadeInCanvas());
+            Debug.Log("Canvas activated and fading in");
         }
 
-        // ---- Progression normale ----
-        clickCount++;
-
-        // Changement d'image = bouchée validée
-        if (clickCount % clicksPerStage == 0)
+        // Pause AC gameplay - disable player input
+        if (KickStarter.stateHandler != null)
         {
-            stageIndex++;
-
-            StartCoroutine(ClickEffect(true)); // crunch AVANT le croc
-
-            if (stageIndex < stages.Length && stages[stageIndex] != null)
-                sr.sprite = stages[stageIndex];
-        }
-        else
-        {
-            // Clic non compté → pas de son
-            StartCoroutine(ClickEffect(false));
+            KickStarter.stateHandler.SetACState(false);
         }
     }
 
+    IEnumerator FadeInCanvas()
+    {
+        float fadeT = 0f;
+        
+        while (fadeT < 1f)
+        {
+            fadeT += Time.deltaTime / 0.3f;
+            canvasGroup.alpha = Mathf.Lerp(0f, 1f, fadeT);
+            yield return null;
+        }
+        canvasGroup.alpha = 1f;
+        Debug.Log("Canvas fully visible");
+    }
 
+    void HandleClick()
+    {
+        Debug.Log("HandleClick called!");
+        
+        if (!canClick || isFinishing)
+        {
+            Debug.Log("Click ignored - canClick: " + canClick + ", isFinishing: " + isFinishing);
+            return;
+        }
 
+        if (stages == null || stages.Length == 0)
+        {
+            Debug.LogWarning("No stages defined!");
+            return;
+        }
+
+        Debug.Log("Processing click - Stage: " + stageIndex + ", ClickCount: " + clickCount);
+
+        bool isLastStage = stageIndex == stages.Length - 1;
+        if (isLastStage)
+        {
+            finishClicks++;
+            Debug.Log("Last stage - finish clicks: " + finishClicks + "/" + finishClicksNeeded);
+            StartCoroutine(ClickEffect(true));
+            if (finishClicks >= finishClicksNeeded) StartCoroutine(FinishCandy());
+            return;
+        }
+
+        clickCount++;
+        if (clickCount >= clicksPerStage)
+        {
+            clickCount = 0;
+            stageIndex++;
+            Debug.Log("Moving to stage: " + stageIndex);
+            if (stageIndex < stages.Length && stages[stageIndex] != null)
+            {
+                uiImage.sprite = stages[stageIndex];
+            }
+        }
+        StartCoroutine(ClickEffect(true));
+    }
 
     IEnumerator ClickEffect(bool playCrunch)
     {
         canClick = false;
 
-        // --- Son crunch AVANT le croc visuel ---
         if (playCrunch && crunchClip != null)
         {
             yield return new WaitForSeconds(crunchBeforeSpriteDelay);
             PlayOneShot(crunchClip, crunchVolume);
         }
 
-        // --- Croc visuel (recul) ---
-        transform.localScale = originalScale * clickScale;
-
+        rectTransform.localScale = originalScale * clickScale;
         yield return new WaitForSeconds(clickHoldTime);
 
-        // Retour rapide
         float t = 0f;
         Vector3 from = originalScale * clickScale;
         Vector3 to = originalScale;
-
         while (t < 1f)
         {
             t += Time.deltaTime * clickAnimSpeed;
-            transform.localScale = Vector3.Lerp(from, to, t);
+            rectTransform.localScale = Vector3.Lerp(from, to, t);
             yield return null;
         }
-
-        transform.localScale = originalScale;
+        rectTransform.localScale = originalScale;
         canClick = true;
     }
-
-
 
     IEnumerator FinishCandy()
     {
@@ -181,51 +293,63 @@ public class EatCottonCandy : MonoBehaviour
         isFinishing = true;
         canClick = false;
 
-        // Son "pouff" à la fin
+
         PlayOneShot(pouffClip, pouffVolume);
 
-        // Fumée
         if (smokePS != null)
         {
-            smokePS.transform.position = transform.position;
+            smokePS.transform.position = cottonCandyImageObject.transform.position;
             smokePS.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             smokePS.Play();
         }
-        else
-        {
-            Debug.LogWarning("SmokePS non assigné dans l'Inspector !");
-        }
 
-        // Disparition
-        Vector3 start = transform.localScale;
+        // Disappear image
+        Vector3 startScale = rectTransform.localScale;
         float t = 0f;
-
         while (t < 1f)
         {
             t += Time.deltaTime / Mathf.Max(0.01f, disappearDuration);
-            transform.localScale = Vector3.Lerp(start, Vector3.zero, t);
+            rectTransform.localScale = Vector3.Lerp(startScale, Vector3.zero, t);
             yield return null;
         }
+        rectTransform.localScale = Vector3.zero;
 
-        transform.localScale = Vector3.zero;
-
-        // Petit délai (réglable) pour laisser voir fumée/son
         yield return new WaitForSeconds(waitAfterSmoke);
 
-        SceneManager.LoadScene(menuSceneName);
+        // Hide Canvas with fade
+        if (canvas != null)
+        {
+            if (canvasGroup != null)
+            {
+                float fadeT = 0f;
+                while (fadeT < 1f)
+                {
+                    fadeT += Time.deltaTime / 0.5f;
+                    canvasGroup.alpha = Mathf.Lerp(1f, 0f, fadeT);
+                    yield return null;
+                }
+                canvasGroup.alpha = 0f;
+            }
+            canvas.gameObject.SetActive(false);
+        }
+
+        // Resume AC gameplay - enable player input
+        if (KickStarter.stateHandler != null)
+        {
+            KickStarter.stateHandler.SetACState (true);
+        }
     }
 
     void PlayOneShot(AudioClip clip, float volume)
     {
         if (clip == null) return;
-
-        // Si pas d'AudioSource sur l'objet, Unity peut quand même jouer un son 2D
         if (audioSrc == null)
         {
             AudioSource.PlayClipAtPoint(clip, transform.position, volume);
-            return;
         }
-
-        audioSrc.PlayOneShot(clip, volume);
+        else
+        {
+            audioSrc.PlayOneShot(clip, volume);
+        }
     }
 }

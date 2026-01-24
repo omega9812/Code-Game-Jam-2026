@@ -2,8 +2,9 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - BackgroundCamera
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - NavMesh
+  - BackgroundImage
+  - DistantHotspot
   - 
   - 
   - 
@@ -41,3 +42,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 812006413
+    locked: 0
+  - name: Obstacles
+    uniqueID: 3944307277
+    locked: 0
+  - name: Npc
+    uniqueID: 2793887573
+    locked: 0
+  m_RenderingLayers:
+  - Default
